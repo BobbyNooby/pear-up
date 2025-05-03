@@ -6,19 +6,94 @@
   <title>Pear Up</title>
   <link href="./app.css" rel="stylesheet"/>
 </head>
+<style>
+  .local-app{
+    background-color: #4B7F52;
+  }
+
+  .local-main-container{
+    background-color: #60a169;
+  }
+
+  .local-button{
+    background-color: #B6F9C9;
+    border-color: #4B7F52;
+    color: #4B7F52;
+    transition-property: color, background-color, border-color;
+    transition-duration: 100ms;
+  }
+
+  .local-button:hover{
+    background-color: #9fdaaf;
+    border-color: #4B7F52;
+    color: #4B7F52;
+  }
+
+  .local-button:disabled{
+    background-color: #4a694f;
+    border-color: #4B7F52;
+    color: #4B7F52;
+  }
+
+  .local-textarea{
+    background-color: #B6F9C9;
+    border-color: #4B7F52;
+    color: #4B7F52;
+  }
+
+  .local-textarea:disabled{
+    background-color: #4a694f;
+    border-color: #4B7F52;
+    color: #4B7F52;
+  }
+
+  .local-container{
+    background-color: #B6F9C9;
+    border-color: #4B7F52;
+    color: #4B7F52;
+  }
+
+
+</style>
 <body>
   <main>
-    <div id="app" class="bg-white w-screen h-screen">
+    <div id="app" class="local-app w-screen h-screen p-2">
 
-      <div id="main-container" class="w-full h-full flex flex-row">
-        <div id="webcam-container" class="w-1/3 flex flex-col bg-gray-200 p-2 space-y-2">
-          <div id="your-cam" class="w-full h-1/2 bg-amber-200 aspect-square"></div>
-          <div id="peer-cams" class="w-full h-1/2 bg-green-300 aspect-square"></div>
+      <div id="main-container" class="local-main-container w-full h-full flex flex-row">
+        <div id="webcam-container" class="w-1/3 flex flex-col p-5">
+          <div id="your-cam-container" class="w-full h-1/2 aspect-square p-2">
+            <div id="your-cam" class="w-full h-full local-container border-2 rounded-lg">
+
+            </div>
+          </div>
+          <div id="peer-cams-container" class="w-full h-1/2 aspect-square p-2">
+            <div id="peer-cam" class="w-full h-full local-container border-2 rounded-lg">
+            </div>
+          </div>
         </div>
         <div id="chat-container" class="w-2/3 flex flex-col p-2 space-y-2">
-          <div id="chat-log" class="w-full h-10/12 bg-amber-500"></div>
-          <div id="chat-box" class="w-full h-2/12 bg-green-500"><button id="matchmake" class="w-full h-full text-white z-10">Send</button></div>
+          <div id="chat-log" class="flex flex-col w-full h-full local-container overflow-y-auto border-2 rounded-lg p-4 ">
+            <div class="chat-message">Welcome to Pear Up! Click on the New button to start chatting with a stranger!</div>
+          </div>
+        
+          <div id="input-row" class="w-full h-24 flex flex-row items-center p-2 gap-2">
+            <!-- Left Button - fixed width -->
+            <button id="matchmake-button" class="w-24 h-full local-button border-2 rounded-lg" style="cursor: pointer;">New</button>
+        
+            <!-- Chat Textarea - stretchable, but no manual resize -->
+            <textarea
+              id="chat-textarea"
+              class="flex-1 h-full px-3 py-2 rounded resize-none outline-none local-textarea border-2"
+              placeholder="Type a message..."
+            ></textarea>
+        
+            <!-- Right Button - fixed width -->
+            <button id="send-button" class="w-24 h-full local-button border-2 rounded-lg" style="cursor: pointer;">Send</button>
+          </div>
         </div>
+        
+        
+        
 
       </div>
 
@@ -27,5 +102,6 @@
   </main>
 
   <script type="module" src="./app.js"></script>
+  <script type="module" src="./lib/test.js"></script>
 </body>
 </html>
