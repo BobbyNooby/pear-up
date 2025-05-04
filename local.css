@@ -1,0 +1,46 @@
+.local-app {
+  background-color: #4B7F52;
+}
+
+.local-main-container {
+  background-color: #60a169;
+}
+
+.local-button {
+  background-color: #B6F9C9;
+  border-color: #4B7F52;
+  color: #4B7F52;
+  transition-property: color, background-color, border-color;
+  transition-duration: 100ms;
+}
+
+.local-button:hover {
+  background-color: #9fdaaf;
+  border-color: #4B7F52;
+  color: #4B7F52;
+}
+
+.local-button:disabled {
+  background-color: #4a694f;
+  border-color: #4B7F52;
+  color: #4B7F52;
+}
+
+.local-textarea {
+  background-color: #B6F9C9;
+  border-color: #4B7F52;
+  color: #4B7F52;
+}
+
+.local-textarea:disabled {
+  background-color: #4a694f;
+  border-color: #4B7F52;
+  color: #4B7F52;
+}
+
+.local-container {
+  background-color: #B6F9C9;
+  border-color: #4B7F52;
+  color: #4B7F52;
+}
+

@@ -1,14 +1,8 @@
-import { onMatchmakingButtonClick, onSendButtonClick } from "./lib/swarm";
+import { initGlobals } from "./lib/globals";
 
 const { teardown } = Pear;
 
 teardown(() => swarm.destroy());
 Pear.updates(() => Pear.reload());
 
-document
-  .querySelector("#matchmake-button")
-  .addEventListener("click", onMatchmakingButtonClick);
-
-document
-  .querySelector("#send-button")
-  .addEventListener("click", onSendButtonClick);
+initGlobals();

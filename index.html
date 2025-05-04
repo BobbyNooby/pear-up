@@ -5,56 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pear Up</title>
   <link href="./app.css" rel="stylesheet"/>
+  <link href="./local.css" rel="stylesheet"/>
 </head>
-<style>
-  .local-app{
-    background-color: #4B7F52;
-  }
-
-  .local-main-container{
-    background-color: #60a169;
-  }
-
-  .local-button{
-    background-color: #B6F9C9;
-    border-color: #4B7F52;
-    color: #4B7F52;
-    transition-property: color, background-color, border-color;
-    transition-duration: 100ms;
-  }
-
-  .local-button:hover{
-    background-color: #9fdaaf;
-    border-color: #4B7F52;
-    color: #4B7F52;
-  }
-
-  .local-button:disabled{
-    background-color: #4a694f;
-    border-color: #4B7F52;
-    color: #4B7F52;
-  }
-
-  .local-textarea{
-    background-color: #B6F9C9;
-    border-color: #4B7F52;
-    color: #4B7F52;
-  }
-
-  .local-textarea:disabled{
-    background-color: #4a694f;
-    border-color: #4B7F52;
-    color: #4B7F52;
-  }
-
-  .local-container{
-    background-color: #B6F9C9;
-    border-color: #4B7F52;
-    color: #4B7F52;
-  }
-
-
-</style>
 <body>
   <main>
     <div id="app" class="local-app w-screen h-screen p-2">
@@ -63,11 +15,12 @@
         <div id="webcam-container" class="w-1/3 flex flex-col p-5">
           <div id="your-cam-container" class="w-full h-1/2 aspect-square p-2">
             <div id="your-cam" class="w-full h-full local-container border-2 rounded-lg">
-
+                <video id="your-stream" class="w-full h-full object-cover scale-x-[-1]" autoplay muted playsinline></video>
             </div>
           </div>
           <div id="peer-cams-container" class="w-full h-1/2 aspect-square p-2">
             <div id="peer-cam" class="w-full h-full local-container border-2 rounded-lg">
+              <video id="peer-stream" class="w-full h-full object-cover scale-x-[-1]" autoplay playsinline></video>
             </div>
           </div>
         </div>
@@ -78,12 +31,11 @@
         
           <div id="input-row" class="w-full h-24 flex flex-row items-center p-2 gap-2">
             <!-- Left Button - fixed width -->
-            <button id="matchmake-button" class="w-24 h-full local-button border-2 rounded-lg" style="cursor: pointer;">New</button>
+            <button id="matchmake-button">New</button>
         
             <!-- Chat Textarea - stretchable, but no manual resize -->
             <textarea
               id="chat-textarea"
-              class="flex-1 h-full px-3 py-2 rounded resize-none outline-none local-textarea border-2"
               placeholder="Type a message..."
             ></textarea>
         
@@ -102,6 +54,6 @@
   </main>
 
   <script type="module" src="./app.js"></script>
-  <script type="module" src="./lib/test.js"></script>
+  <script type="module" src="./lib/globals.js"></script>
 </body>
 </html>
