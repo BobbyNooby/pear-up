@@ -1,6 +1,6 @@
 {
   "name": "pear-up",
-  "main": "welcome.html",
+  "main": "index.html",
   "pear": {
     "name": "pear-up",
     "type": "desktop",
